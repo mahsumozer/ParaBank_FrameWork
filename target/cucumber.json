@@ -1,0 +1,150 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is already on Welcome page",
+            "match": {
+              "location": "StepDefinitions.UpdateContactInfoStepDefinitions.user_is_already_logged_in()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Bill pay button",
+            "match": {
+              "location": "StepDefinitions.BillPayStepDefinitions.user_clicks_on_bill_pay_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-14T22:20:05.199Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "User should be able choose account for payment",
+        "description": "",
+        "id": "bill-pay-functionality;user-should-be-able-choose-account-for-payment",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User enter all information and choose account",
+            "match": {
+              "location": "StepDefinitions.BillPayStepDefinitions.user_enter_all_information_and_choose_account(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "ali",
+                  "20main",
+                  "denver",
+                  "colorado",
+                  "80210",
+                  "123456",
+                  "1234",
+                  "1234",
+                  "1905",
+                  "17784"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User clicks on Send payment button",
+            "match": {
+              "location": "StepDefinitions.BillPayStepDefinitions.user_clicks_on_send_payment_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User should see \"Bill Payment Complete\" message on page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Bill Payment Complete\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_should_see_message_on_page(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@billpay"
+          },
+          {
+            "name": "@tc2"
+          }
+        ]
+      }
+    ],
+    "name": "Bill Pay Functionality",
+    "description": "",
+    "id": "bill-pay-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/BillPayFeature.feature",
+    "tags": [
+      {
+        "name": "@billpay",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
