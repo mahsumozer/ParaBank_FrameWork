@@ -9,6 +9,13 @@ import java.util.Map;
 
 public class CustomerCareStepDefinitions extends CommonMethod {
 
+
+
+    @Given("User is on Welcome page")
+    public void user_is_welcome_page() {
+        login.logininSuccessfuly();
+    }
+
     @Given("User clicks on Contact us button")
     public void user_clicks_on_contact_us_button() {
         click(welPage.contact_us);

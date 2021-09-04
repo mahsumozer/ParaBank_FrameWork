@@ -18,7 +18,7 @@ Feature:Register
     |Zipcode  |900000  |
     |Phone    |123234242|
     |Ssn      |212121121|
-    |Username |parabank|
+    |Username |parabank12|
     |Password |parapara|
     |Confirm  |parapara|
     Then User should see welcome page
@@ -34,7 +34,7 @@ Feature:Register
       |Zipcode  |900000  |
       |Phone    |123234242|
       |Ssn      |212121121|
-      |Username |newuser3636|
+      |Username |parabank12|
       |Password |newpassword129|
       |Confirm  |newpassword129|
     Then User should see "This username already exists." message

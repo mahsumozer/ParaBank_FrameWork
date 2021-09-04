@@ -2,7 +2,8 @@
 Feature:Customer Care
 
   Background:
-    Given User is Welcome page
+    Given User is on Welcome page
+
 @customercare
   Scenario: User should should send message Successfully
     And User clicks on Contact us button

@@ -45,14 +45,11 @@ public class BillPayStepDefinitions extends CommonMethod {
     public void should_see_see_message(String string) {
         WebElement Web_Message=driver.findElement(By.xpath("//h1[@class='title' and text()='Bill Payment Complete']"));
 
-
-
-
     }
 
-    @When("User enter all information and choose account")
-    public void user_enter_all_information_and_choose_account(DataTable details) {
 
+    @When("User enters any invalid amount in Amount filed")
+    public void user_enter_any_invalid_amount_in_amount_filed(DataTable details) {
         List<String> data=details.asList();
 
         sendText(billpay.payee_name_field, data.get(0));
@@ -65,9 +62,18 @@ public class BillPayStepDefinitions extends CommonMethod {
         sendText(billpay.verfiy_account,data.get(7));
         sendText(billpay.ammount,data.get(8));
 
-        Select select=new Select(billpay.account_dropdown);
-        select.selectByValue(data.get(9));
+    }
+    @Then("User should see {string} error message")
+    public void user_should_see_error_message(String string) {
+
+        String ErrorMessage=driver.findElement(By.xpath("//span[text()='Please enter a valid amount.']")).getText();
+        Assert.assertEquals(string,ErrorMessage);
+
+
 
     }
+
+
+
 
 }

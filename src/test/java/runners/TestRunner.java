@@ -10,10 +10,10 @@ import org.junit.runner.RunWith;
 
         glue = "StepDefinitions" //we need to glue our step definitions -implementation
 
-        ,dryRun =true // will not execute test , will just scan steps, this method will tell me the missing steps,
+        ,dryRun =false// will not execute test , will just scan steps, this method will tell me the missing steps,
                 //make true before run your testrunner to see your missing steps
        // ,monochrome = true
-        ,tags = "@tc2"
+        ,tags = "@Smoke"
         ,plugin ={"pretty","html:target/cucumber-default-reports.html",
 
 "rerun:target/failed-test","json:target/cucumber.json"}

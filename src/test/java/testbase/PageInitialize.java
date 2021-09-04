@@ -11,6 +11,8 @@ public class PageInitialize extends BaseClass {
     public static UpdateInfoPageObjects updateInfo;
     public static ContactUs_PageObjects contact;
     public static  BillPayPageObjects billpay;
+    public static TransferFundsPageObjects transferfund;
+
 
 
 
@@ -21,6 +23,7 @@ public class PageInitialize extends BaseClass {
         updateInfo=new UpdateInfoPageObjects();
         contact=new ContactUs_PageObjects();
         billpay=new BillPayPageObjects();
+        transferfund=new TransferFundsPageObjects();
 
 
 

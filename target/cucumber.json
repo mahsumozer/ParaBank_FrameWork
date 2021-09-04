@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 1768000000,
               "status": "passed"
             },
             "line": 5,
@@ -23,6 +23,7 @@
           },
           {
             "result": {
+              "duration": 837000000,
               "status": "passed"
             },
             "line": 6,
@@ -35,11 +36,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-08-14T22:20:05.199Z",
+        "start_timestamp": "2021-08-20T17:22:54.418Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 5485000000,
               "status": "passed"
             },
             "match": {
@@ -47,13 +48,14 @@
             }
           }
         ],
-        "line": 16,
-        "name": "User should be able choose account for payment",
+        "line": 8,
+        "name": "User should be able to pay bill",
         "description": "",
-        "id": "bill-pay-functionality;user-should-be-able-choose-account-for-payment",
+        "id": "bill-pay-functionality;user-should-be-able-to-pay-bill",
         "after": [
           {
             "result": {
+              "duration": 750000000,
               "status": "passed"
             },
             "match": {
@@ -66,13 +68,13 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 788000000,
               "status": "passed"
             },
-            "line": 17,
-            "name": "User enter all information and choose account",
+            "line": 10,
+            "name": "User enter all information",
             "match": {
-              "location": "StepDefinitions.BillPayStepDefinitions.user_enter_all_information_and_choose_account(io.cucumber.datatable.DataTable)"
+              "location": "StepDefinitions.BillPayStepDefinitions.user_enter_all_information(io.cucumber.datatable.DataTable)"
             },
             "rows": [
               {
@@ -85,8 +87,7 @@
                   "123456",
                   "1234",
                   "1234",
-                  "1905",
-                  "17784"
+                  "1905"
                 ]
               }
             ],
@@ -94,6 +95,138 @@
           },
           {
             "result": {
+              "duration": 203000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User clicks on Send payment button",
+            "match": {
+              "location": "StepDefinitions.BillPayStepDefinitions.user_clicks_on_send_payment_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User should see see \"Bill Payment Complete\" message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Bill Payment Complete\"",
+                  "offset": 20
+                }
+              ],
+              "location": "StepDefinitions.BillPayStepDefinitions.should_see_see_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@billpay"
+          },
+          {
+            "name": "@Smoke"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1626000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is already on Welcome page",
+            "match": {
+              "location": "StepDefinitions.UpdateContactInfoStepDefinitions.user_is_already_logged_in()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 978000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Bill pay button",
+            "match": {
+              "location": "StepDefinitions.BillPayStepDefinitions.user_clicks_on_bill_pay_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:04.432Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4066000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "User should be insert only number in Amount field",
+        "description": "",
+        "id": "bill-pay-functionality;user-should-be-insert-only-number-in-amount-field",
+        "after": [
+          {
+            "result": {
+              "duration": 756000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 778000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User enters any invalid amount in Amount filed",
+            "match": {
+              "location": "StepDefinitions.BillPayStepDefinitions.user_enter_any_invalid_amount_in_amount_filed(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "ali",
+                  "20main",
+                  "denver",
+                  "colorado",
+                  "80210",
+                  "123456",
+                  "1234",
+                  "1234",
+                  "aa"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 196000000,
               "status": "passed"
             },
             "line": 19,
@@ -105,18 +238,19 @@
           },
           {
             "result": {
+              "duration": 46000000,
               "status": "passed"
             },
             "line": 20,
-            "name": "User should see \"Bill Payment Complete\" message on page",
+            "name": "User should see \"Please enter a valid amount.\" error message",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Bill Payment Complete\"",
+                  "val": "\"Please enter a valid amount.\"",
                   "offset": 16
                 }
               ],
-              "location": "StepDefinitions.CustomerCareStepDefinitions.user_should_see_message_on_page(java.lang.String)"
+              "location": "StepDefinitions.BillPayStepDefinitions.user_should_see_error_message(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -124,6 +258,9 @@
         "tags": [
           {
             "name": "@billpay"
+          },
+          {
+            "name": "@Smoke"
           },
           {
             "name": "@tc2"
@@ -143,6 +280,1534 @@
         "location": {
           "line": 1,
           "column": 1
+        }
+      },
+      {
+        "name": "@Smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 10
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1243000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on Welcome page",
+            "match": {
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_is_welcome_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:12.915Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3908000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "User should should send message Successfully",
+        "description": "",
+        "id": "customer-care;user-should-should-send-message-successfully",
+        "after": [
+          {
+            "result": {
+              "duration": 739000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1020000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User clicks on Contact us button",
+            "match": {
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_clicks_on_contact_us_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 592000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User fills the form and clicks on send button",
+            "match": {
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_fills_the_form_and_clicks_on_send_button(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Name",
+                  "Mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Email",
+                  "abc@gmail.com"
+                ]
+              },
+              {
+                "cells": [
+                  "Phone",
+                  "123321123"
+                ]
+              },
+              {
+                "cells": [
+                  "Message",
+                  "I was overcharged from last transaction"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 36000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User should see \"A Customer Care Representative will be contacting you.\" message on page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"A Customer Care Representative will be contacting you.\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_should_see_message_on_page(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@customercare"
+          }
+        ]
+      }
+    ],
+    "name": "Customer Care",
+    "description": "",
+    "id": "customer-care",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/CustomerCare.feature",
+    "tags": [
+      {
+        "name": "@Smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:20.500Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3879000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "User login successfully",
+        "description": "",
+        "id": "login-functionality;user-login-successfully",
+        "after": [
+          {
+            "result": {
+              "duration": 713000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1297000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user enters valid username and password",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_enters_valid_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user should have access to homepage",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_should_have_access_to_homepage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@login"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:26.423Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4299000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "User  forget enter username",
+        "description": "",
+        "id": "login-functionality;user--forget-enter-username",
+        "after": [
+          {
+            "result": {
+              "duration": 660000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 880000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user enter forget to enter username",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_enter_forget_to_enter_username()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 26000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user should see \"Please enter a username and password.\" error message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Please enter a username and password.\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_should_see_error_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@login"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:32.332Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4022000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "User forget to enter username and password",
+        "description": "",
+        "id": "login-functionality;user-forget-to-enter-username-and-password",
+        "after": [
+          {
+            "result": {
+              "duration": 698000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2468000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "user forget to enter username and password and click login button",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_forget_to_enter_username_and_password_and_click_login_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 64000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "user should see \"Please enter a username and password.\" error message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Please enter a username and password.\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_should_see_error_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@login"
+          }
+        ]
+      }
+    ],
+    "name": "Login Functionality",
+    "description": "",
+    "id": "login-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/LoginFeature.feature",
+    "tags": [
+      {
+        "name": "@Smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@login",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 459000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "clicks on register button",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.clicks_on_register_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:39.631Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3779000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Register for a new account",
+        "description": "",
+        "id": "register;register-for-a-new-account",
+        "after": [
+          {
+            "result": {
+              "duration": 661000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1205000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user enters all information and click on register button",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.user_enters_all_information_and_click_on_register_button(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Firstname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Lastname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Address",
+                  "20 main"
+                ]
+              },
+              {
+                "cells": [
+                  "City",
+                  "denver"
+                ]
+              },
+              {
+                "cells": [
+                  "State",
+                  "Colorado"
+                ]
+              },
+              {
+                "cells": [
+                  "Zipcode",
+                  "900000"
+                ]
+              },
+              {
+                "cells": [
+                  "Phone",
+                  "123234242"
+                ]
+              },
+              {
+                "cells": [
+                  "Ssn",
+                  "212121121"
+                ]
+              },
+              {
+                "cells": [
+                  "Username",
+                  "parabank12"
+                ]
+              },
+              {
+                "cells": [
+                  "Password",
+                  "parapara"
+                ]
+              },
+              {
+                "cells": [
+                  "Confirm",
+                  "parapara"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 27000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should see welcome page",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.user_should_see_welcome_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@regis"
+          },
+          {
+            "name": "@regis1"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 511000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "clicks on register button",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.clicks_on_register_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:45.801Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2889000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "User shoudl see error if user create another account with same username",
+        "description": "",
+        "id": "register;user-shoudl-see-error-if-user-create-another-account-with-same-username",
+        "after": [
+          {
+            "result": {
+              "duration": 727000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1231000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "user enters all information and click on register button",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.user_enters_all_information_and_click_on_register_button(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Firstname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Lastname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Address",
+                  "20 main"
+                ]
+              },
+              {
+                "cells": [
+                  "City",
+                  "denver"
+                ]
+              },
+              {
+                "cells": [
+                  "State",
+                  "Colorado"
+                ]
+              },
+              {
+                "cells": [
+                  "Zipcode",
+                  "900000"
+                ]
+              },
+              {
+                "cells": [
+                  "Phone",
+                  "123234242"
+                ]
+              },
+              {
+                "cells": [
+                  "Ssn",
+                  "212121121"
+                ]
+              },
+              {
+                "cells": [
+                  "Username",
+                  "parabank12"
+                ]
+              },
+              {
+                "cells": [
+                  "Password",
+                  "newpassword129"
+                ]
+              },
+              {
+                "cells": [
+                  "Confirm",
+                  "newpassword129"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 27000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "User should see \"This username already exists.\" message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"This username already exists.\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.user_should_see_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@regis"
+          },
+          {
+            "name": "@regis2"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginFeatureStepDefinitions.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 523000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "clicks on register button",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.clicks_on_register_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:51.213Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4175000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 43,
+        "name": "User should see error message if passwords are not match",
+        "description": "",
+        "id": "register;user-should-see-error-message-if-passwords-are-not-match",
+        "after": [
+          {
+            "result": {
+              "duration": 686000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1264000000,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "user enters all information and click on register button",
+            "match": {
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.user_enters_all_information_and_click_on_register_button(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Firstname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Lastname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Address",
+                  "20 main"
+                ]
+              },
+              {
+                "cells": [
+                  "City",
+                  "denver"
+                ]
+              },
+              {
+                "cells": [
+                  "State",
+                  "Colorado"
+                ]
+              },
+              {
+                "cells": [
+                  "Zipcode",
+                  "900000"
+                ]
+              },
+              {
+                "cells": [
+                  "Phone",
+                  "123234242"
+                ]
+              },
+              {
+                "cells": [
+                  "Ssn",
+                  "212121121"
+                ]
+              },
+              {
+                "cells": [
+                  "Username",
+                  "newuser23"
+                ]
+              },
+              {
+                "cells": [
+                  "Password",
+                  "newpassword12"
+                ]
+              },
+              {
+                "cells": [
+                  "Confirm",
+                  "newpassword1"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 61000000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User should see \"Passwords did not match.\" message on next to password",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Passwords did not match.\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.RegisterFeatureStepDefinitions.user_should_see_message_on_next_to_password(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@regis"
+          },
+          {
+            "name": "@regis3"
+          }
+        ]
+      }
+    ],
+    "name": "Register",
+    "description": "",
+    "id": "register",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/RegisterFunction.feature",
+    "tags": [
+      {
+        "name": "@Smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@regis",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1163000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on Welcome page",
+            "match": {
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_is_welcome_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 691000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Transfer Funds button from home page",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_clicks_on_transfer_funds_button_from_home_page()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:23:57.952Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4009000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "User should be able to transfer funds successfully",
+        "description": "",
+        "id": "transfer-funds;user-should-be-able-to-transfer-funds-successfully",
+        "after": [
+          {
+            "result": {
+              "duration": 680000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 293000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User fills all fields",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_fills_all_fields(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "120",
+                  "15009",
+                  "15453"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 90000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User clicks Transfer button",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_clicks_transfer()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 151000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User should see transfer message",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_should_see_transfer_message()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@TransferFunds"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1141000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on Welcome page",
+            "match": {
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_is_welcome_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 689000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Transfer Funds button from home page",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_clicks_on_transfer_funds_button_from_home_page()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:24:05.069Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3634000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "User should see Error Message if user blanks amount field",
+        "description": "",
+        "id": "transfer-funds;user-should-see-error-message-if-user-blanks-amount-field",
+        "after": [
+          {
+            "result": {
+              "duration": 709000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User does not enter anything to amount field",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_does_not_enter_anything_to_amount_field()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 132000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User clicks Transfer button",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_clicks_transfer()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 126000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User should see \"The amount cannot be empty.\" error message on transfer funds page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"The amount cannot be empty.\"",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_should_see_error_message_on_transfer_funds_page(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@TransferFunds"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1331000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on Welcome page",
+            "match": {
+              "location": "StepDefinitions.CustomerCareStepDefinitions.user_is_welcome_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 802000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Transfer Funds button from home page",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_clicks_on_transfer_funds_button_from_home_page()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-20T17:24:11.575Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3571000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "User should be choose account for transfer funds",
+        "description": "",
+        "id": "transfer-funds;user-should-be-choose-account-for-transfer-funds",
+        "after": [
+          {
+            "result": {
+              "duration": 699000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 32000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User chooses account from dropdown",
+            "match": {
+              "location": "StepDefinitions.TransferFundsStepDefinitions.user_chooses_account_from_dropdown()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@TransferFunds"
+          }
+        ]
+      }
+    ],
+    "name": "Transfer Funds",
+    "description": "",
+    "id": "transfer-funds",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/TranseferFund.feature",
+    "tags": [
+      {
+        "name": "@Smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@TransferFunds",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-08-20T17:24:18.038Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2832000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.startTest()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "User updates contact information successful",
+        "description": "",
+        "id": "update-contact-info;user-updates-contact-information-successful",
+        "after": [
+          {
+            "result": {
+              "duration": 740000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1202000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is already on Welcome page",
+            "match": {
+              "location": "StepDefinitions.UpdateContactInfoStepDefinitions.user_is_already_logged_in()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 637000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Update Contact info button",
+            "match": {
+              "location": "StepDefinitions.UpdateContactInfoStepDefinitions.user_clicks_on_update_contact_info_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 723000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User fills all fields and clicks on Update profile button",
+            "match": {
+              "location": "StepDefinitions.UpdateContactInfoStepDefinitions.user_fills_all_fields_and_clicks_on_update_profile_button(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Firstname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Lastname",
+                  "mahir"
+                ]
+              },
+              {
+                "cells": [
+                  "Address",
+                  "20 main"
+                ]
+              },
+              {
+                "cells": [
+                  "City",
+                  "denver"
+                ]
+              },
+              {
+                "cells": [
+                  "State",
+                  "Colorado"
+                ]
+              },
+              {
+                "cells": [
+                  "Zipcode",
+                  "900000"
+                ]
+              },
+              {
+                "cells": [
+                  "Phone",
+                  "123234242"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 133000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User sould see \"Profile Updated\" message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Profile Updated\"",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinitions.UpdateContactInfoStepDefinitions.user_sould_see_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke"
+          },
+          {
+            "name": "@update"
+          },
+          {
+            "name": "@update"
+          }
+        ]
+      }
+    ],
+    "name": "Update Contact Info",
+    "description": "",
+    "id": "update-contact-info",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/UpdateInfo.feature",
+    "tags": [
+      {
+        "name": "@Smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@update",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 8
         }
       }
     ]
